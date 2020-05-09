@@ -1,0 +1,96 @@
+﻿@page
+@model ReservesEstimation.Web.Pages.calculatorModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@*@model Models.VolumetricReserveModel*@
+
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>calculator</title>
+</head>
+<body class="h-100">
+
+    <form method="post">
+        <div class="container-fluid d-flex flex-column ">
+
+            <div class="d-flex flex-column mb-4" >
+                <div class="row mb-1">
+                    <div class="col-3">
+                        <label class="mr-2">@Html.DisplayNameFor(x => x.VolModel.Area)</label>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control" asp-for="VolModel.Area" />
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-3">
+                        <label class="mr-2">@Html.DisplayNameFor(x => x.VolModel.Height)</label>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control" asp-for="VolModel.Height" />
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-3">
+                        <label class="mr-2">@Html.DisplayNameFor(x => x.VolModel.Porosity)</label>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control" asp-for="VolModel.Porosity" />
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-3">
+                        <label class="mr-2">@Html.DisplayNameFor(x => x.VolModel.ConnateWaterSaturation)</label>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control" asp-for="VolModel.ConnateWaterSaturation" />
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-3">
+                        <label class="mr-2">@Html.DisplayNameFor(x => x.VolModel.FormationVolFactorAtInit)</label>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control" asp-for="VolModel.FormationVolFactorAtInit" />
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-3">
+                        <label class="mr-2">@Html.DisplayNameFor(x => x.VolModel.FormationVolFactorGasAtInit)</label>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control" asp-for="VolModel.FormationVolFactorGasAtInit" />
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <input id="Submit1" class="btn btn-outline-secondary" type="submit" value="submit" />
+
+            <div class="d-flex">
+                <label class="mr-2">@Html.DisplayNameFor(x => x.VolModel.Result)</label>
+                <label class="mr-2">@Html.ValueFor(x => x.VolModel.Result)</label>
+            </div>
+        </div>
+
+
+        @*<input id="inpHeight" type="number" placeholder="Height" />
+            <input id="inpPorosity" type="number" placeholder="Porosity" />
+            <input id="inpConnateWaterSaturation" type="number" placeholder="Connate Water Saturation" />
+            <input id="inpFormationVolFactorAtInit" type="number" placeholder="Formation Volume Factor At Init" />
+            <input id="inpFormationVolFactorGasAtInit" type="number" placeholder="Formation Vol Factor Gas At Init" />*@
+
+
+
+    </form>
+
+</body>
+</html>
