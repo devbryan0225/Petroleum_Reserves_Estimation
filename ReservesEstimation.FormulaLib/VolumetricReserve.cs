@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
-
+﻿
 namespace ReservesEstimation.FormulaLib
 {
     public class VolumetricReserve : ReservesEstimationBase
@@ -15,7 +11,6 @@ namespace ReservesEstimation.FormulaLib
         public float Height { get; set; }
         public float Porosity { get; set; }
         public float ConnateWaterSaturation { get; set; }
-        //[RegularExpression("^[1-9]\d*$")]
         public float FormationVolFactorAtInit { get; set; }
         public float FormationVolFactorGasAtInit { get; set; }
 
@@ -39,54 +34,24 @@ namespace ReservesEstimation.FormulaLib
         /// <returns></returns>
         public override float GetOriginalOilInPlace()
         {
-            Console.WriteLine("Calculate Original Oil in Place...\n");
 
-            try
-            {
-                _N = AcreftToBbl * Area * Height * Porosity * (1 - ConnateWaterSaturation) / FormationVolFactorAtInit;
-
-                //Validation.CheckNonZero(FormationVolFactorAtInit);
-
-                if (float.IsNaN(_N)) { Console.WriteLine("Not a number.\n"); }
-
-            }
-            catch (NullReferenceException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
+            _N = AcreftToBbl * Area * Height * Porosity * (1 - ConnateWaterSaturation) / FormationVolFactorAtInit;
 
             return _N;
         }
         public override float GetOriginalGasInPlace()
         {
-            Console.WriteLine("Calculate Original Gas in Place...\n");
-            try
-            {
-                _G = AcreftToFeetCube * Area * Height * Porosity * (1 - ConnateWaterSaturation) / FormationVolFactorGasAtInit;
-            }
-            catch (NullReferenceException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            _G = AcreftToFeetCube * Area * Height * Porosity * (1 - ConnateWaterSaturation) / FormationVolFactorGasAtInit;
 
             return _G;
         }
         public override float GetRecoverableReserves(DriveMechanism drive)
         {
-            Console.WriteLine("Calculate Recoverable Reserves...\n");
             float RecoveryFactor;
             float Reserves = 0;
-            try
-            {
-                RecoveryFactor = PrimaryRecoveryFactor + SecondaryRecoveryFactor;
-                Reserves = _N * RecoveryFactor;
-            }
-            catch (NullReferenceException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
 
+            RecoveryFactor = PrimaryRecoveryFactor + SecondaryRecoveryFactor;
+            Reserves = _N * RecoveryFactor;
 
             return Reserves;
         }

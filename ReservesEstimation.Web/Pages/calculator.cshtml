@@ -34,6 +34,7 @@
                     </div>
                     <div class="col-5">
                         <input class="form-control" asp-for="VolModel.Height" />
+                        <span class="small" style="color:red;">@Html.ValidationMessage("VolModel.FormationVolFactorAtInit")</span>
                     </div>
                 </div>
                 <div class="row mb-1">
@@ -55,9 +56,11 @@
                 <div class="row mb-1">
                     <div class="col-3">
                         <label class="mr-2">@Html.DisplayNameFor(x => x.VolModel.FormationVolFactorAtInit)</label>
+                        
                     </div>
                     <div class="col-5">
                         <input class="form-control" asp-for="VolModel.FormationVolFactorAtInit" />
+                        <span class="small" style="color:red;">@Html.ValidationMessage("VolModel.FormationVolFactorAtInit")</span>
                     </div>
                 </div>
                 <div class="row mb-1">
@@ -66,6 +69,7 @@
                     </div>
                     <div class="col-5">
                         <input class="form-control" asp-for="VolModel.FormationVolFactorGasAtInit" />
+                        <span class="small" style="color:red;">@Html.ValidationMessage("VolModel.FormationVolFactorGasAtInit")</span>
                     </div>
                 </div>
 
