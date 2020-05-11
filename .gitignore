@@ -3,5 +3,7 @@ ReservesEstimation.FormulaLib/bin
 ReservesEstimation.FormulaLib/obj
 ReservesEstimation.Web/bin
 ReservesEstimation.Web/obj
-.vs/ReservesEstimation/DesignTimeBuild/.dtbcache.v2
-.vs/ReservesEstimation/v16/.suo
+ReservesEstimation.Web/Properties/PublishProfiles
+ReservesEstimation.Web/.config
+.vs/ReservesEstimation/DesignTimeBuild
+.vs/ReservesEstimation/v16
